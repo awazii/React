@@ -1,0 +1,17 @@
+export let cards = [
+  { id: 1, title: "Falling Skies", artist: "Nova Ray", img: "https://picsum.photos/seed/track1/300" },
+  { id: 2, title: "Echoes in the Dark", artist: "Skybound", img: "https://picsum.photos/seed/track2/300" },
+  { id: 3, title: "City Lights", artist: "Midnight Drive", img: "https://picsum.photos/seed/track3/300" },
+  { id: 4, title: "Golden Hour", artist: "Sunflare", img: "https://picsum.photos/seed/track4/300" },
+  { id: 5, title: "Heartbeat Rush", artist: "Zenix", img: "https://picsum.photos/seed/track5/300" },
+  { id: 6, title: "Neon Rain", artist: "Luma X", img: "https://picsum.photos/seed/track6/300" },
+  { id: 7, title: "Gravity", artist: "Atlas", img: "https://picsum.photos/seed/track7/300" },
+  { id: 8, title: "Moonchild", artist: "Eclipse", img: "https://picsum.photos/seed/track8/300" },
+  { id: 9, title: "Dream Loop", artist: "Lo-Fi Krew", img: "https://picsum.photos/seed/track9/300" },
+  { id: 10, title: "Twilight Saga", artist: "Vanta", img: "https://picsum.photos/seed/track10/300" },
+  { id: 11, title: "Crystal Drive", artist: "Synthwave Bros", img: "https://picsum.photos/seed/track11/300" },
+  { id: 12, title: "Vortex", artist: "DJ Hypernova", img: "https://picsum.photos/seed/track12/300" },
+  { id: 13, title: "Dawn Break", artist: "Aurora Flame", img: "https://picsum.photos/seed/track13/300" },
+  { id: 14, title: "Electric Soul", artist: "Pulse Theory", img: "https://picsum.photos/seed/track14/300" },
+  { id: 15, title: "Skywalker", artist: "Starglitch", img: "https://picsum.photos/seed/track15/300" },
+];

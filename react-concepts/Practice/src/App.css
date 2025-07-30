@@ -1,0 +1,39 @@
+.Two{
+    display: grid;
+    grid-template-columns: 700px 600px;
+    justify-content: center;
+    gap: 30px
+    ;
+    & h2{
+        margin-bottom: 10px;
+    }
+}
+.inputs{
+     width: 500px;
+     height: max-content;
+     justify-self: center;
+     align-self: center;
+     border: 1px solid grey;
+     border-radius: 10px;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.inputscontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    margin-bottom: 10px;
+    & input , label{
+        width: 250px;
+    }
+}
+.submitbtn{
+    all: unset;
+    border: 1px solid;
+    padding:5px 20px;
+    border-radius: inherit;
+}

@@ -1,0 +1,53 @@
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    height: 60px;
+    & li{
+        list-style: none;
+        font-size: 20px;
+    }
+}
+.Title{
+    text-align: center;
+    margin-top: 20px;
+}
+.Change {
+  all: unset;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+   background-color: rgb(41, 38, 38);
+   color: white;
+   width: max-content;
+   transition: all 0.3s ease;
+   &:hover {
+    color: #333;
+    background-color: #ffffff;
+  }
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.likebtn-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.like{
+  all: unset;
+  margin-top: 10px;
+ background-color: rgb(89, 98, 102);
+ color: white;
+  padding: 5px 10px;
+  border-radius: 88px;
+}

@@ -1,0 +1,34 @@
+.card{
+    width: 100%;
+    height: max-content;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.Image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+.Image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.title,.artist {
+   text-align: center;
+}
+.title {
+    font-size: 1.2rem;
+}
+.artist, .change {
+    font-size: 1rem;
+    color: #666;
+}
+.change {
+   background-color: yellow;
+   width: max-content;
+}
