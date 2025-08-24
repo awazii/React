@@ -12,7 +12,7 @@
   /* lighter gray for cards */
   --color-light-text: #1f2937;
   /* dark gray text (not harsh black) */
-  --color-light-primary:#ff1d58;
+  --color-light-primary: #ff1d58;
   /* same blue accent for consistency */
 
 
@@ -32,6 +32,19 @@
   body {
     @apply text-light-text dark:text-dark-text font-sans bg-neutral-200 dark:bg-neutral-800;
   }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }
 
 @layer components {
@@ -44,17 +57,21 @@
       @apply scale-95
     }
   }
-.bb{
-  @apply border-b-2 border-b-light-primary dark:border-b-dark-primary placeholder:text-neutral-700 dark:placeholder:text-neutral-300
-}
+
+  .bb {
+    @apply border-b-2 border-b-light-primary dark:border-b-dark-primary placeholder:text-neutral-700 dark:placeholder:text-neutral-300
+  }
+
   .list {
     @apply w-full h-12 rounded-lg flex items-center justify-between px-3 cursor-pointer;
   }
 
-  .list:hover ,.activated{
-    @apply border-0 border-l-4 border-light-primary dark:border-dark-primary bg-neutral-300/50 dark:bg-neutral-700/50 ;
+  .list:hover,
+  .activated {
+    @apply border-0 border-l-4 border-light-primary dark:border-dark-primary bg-neutral-300/50 dark:bg-neutral-700/50;
   }
-  .controls{
+
+  .controls {
     @apply size-10 rounded-full flex items-center justify-center;
   }
 }

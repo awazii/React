@@ -44,7 +44,7 @@ const Sidebar = ({ togglesidebar, showsidebar, todolists, settodolists ,currlid,
                     <p>No lists available</p>
                 </div> : ''}
                 
-                <div className="custom-lists max-h-[65%]  overflow-auto">
+                <div className="custom-lists max-h-[65%]  overflow-auto  [&::-webkit-scrollbar-thumb]:bg-neutral-500/50  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-700">
                    {todolists.custom.map((list, index) => (
                        <div onClick={()=>setcurrlid({category:'custom',id:list.id})} className={`c-list list ${list.id===currlid.id?"activated":''}`} key={index}>
                            <Renderlist list={list} custom={true} />
