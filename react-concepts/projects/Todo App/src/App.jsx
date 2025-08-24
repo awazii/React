@@ -1,33 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// localStorage.removeItem("todolists")
+import { useState, useEffect } from 'react'
 import './App.css'
-
+import Navbar from './Components/Navbar'
+import Sidebar from './Components/sidebar'
+import Todos from './Components/Todos'
+import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/esm-browser/index.js';
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import {produce} from "immer";
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [togglesidebar, settogglesidebar] = useState(false)
+  const [todolists, settodolists] = useState(JSON.parse(localStorage.getItem('todolists')) || { daily: [{ id: uuidv4(), title: "Daily", date: dayjs().format('DD-MM-YYYY'), day: dayjs().format('d'), tasks: [] }], custom: [] })
+  const [currlid, setcurrlid] = useState({ category: 'daily', id: todolists.daily[0].id })
+  const showsidebar = () => {
+    settogglesidebar(!togglesidebar);
+  };
+  useEffect(() => {
+    localStorage.setItem('todolists', JSON.stringify(todolists));
+    console.log(todolists)
+  }, [todolists])
+  useEffect(() => {
+    const today = dayjs().format('DD-MM-YYYY')
+    const prev= todolists.daily[0].date
+    if (today !== prev) {
+      settodolists(produce((todolists,drafts)=>{
+        drafts.daily[0].date = today
+        drafts.daily[0].day = dayjs().format('d')
+        drafts.daily[0].tasks = []
+      }))
+    }
+  }, [])
+  
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p  className='bg-yellow-800'>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar showsidebar={showsidebar} />
+      <Sidebar togglesidebar={togglesidebar} showsidebar={showsidebar} todolists={todolists} settodolists={settodolists} currlid={currlid} setcurrlid={setcurrlid}/> 
+      <Todos todolists={todolists} settodolists={settodolists} currlid={currlid} />
     </>
   )
 }

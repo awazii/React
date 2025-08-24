@@ -1,0 +1,48 @@
+@import "tailwindcss"; /* Optional: prefix all classes like aw:bg-red-500 */
+@plugin "@tailwindcss/forms";
+
+ 
+/* ---------- BASE LAYER ----------
+   Lowest priority. For global element styles (resets, typography, tags)
+   Utilities can override these easily.
+*/
+@layer base {
+  h1 {
+    @apply text-4xl font-bold; /* Large headings */
+  }
+  p {
+    @apply text-gray-700; /* Default paragraph color */
+  }
+}
+
+/* ---------- COMPONENTS LAYER ----------
+/* ---------- COMPONENTS LAYER ----------
+   Medium priority. For custom reusable components.
+   Utilities can still override these.
+*/
+@layer components {
+  .btn {
+    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600;
+      background-color: theme(colors.blue.500); /* it will be synced  if we change the theme  in future*/
+  }
+  .card {
+    @apply p-6 rounded-xl shadow-md bg-white;
+  }
+}
+
+/* ---------- UTILITIES LAYER ----------
+   Highest priority. For making your own utility classes.
+   These can override almost everything else.
+*/
+@layer utilities {
+  .content-auto {
+    content-visibility: auto; /* Custom browser property */
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+@theme { /* Define or extend theme variables directly in CSS */
+  --color-brand: #ff5733;
+  --spacing-card: 1.25rem;
+}
