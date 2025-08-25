@@ -100,14 +100,14 @@ const Task =({task})=>{
   )
  }
   return (
-    <div className='todocontainer mx-auto container h-[80vh]  flex justify-center items-center flex-col'>
-      <div className="todos relative bg-light-bg dark:bg-dark-bg shadow-2xl w-[50%]  h-max-[90%]   rounded-4xl mt-10 mx-auto  overflow-auto flex-[60%] space-y-2">
+    <div className='todocontainer mx-auto container h-[80vh] flex '>
+      <div className="todos relative bg-light-bg dark:bg-dark-bg shadow-2xl  w-[90%] lg:w-[50%] md:w-[70%] sm:w-[90%] h-max-[90%]   rounded-4xl mt-10   mx-auto space-y-2">
         <div className="heading">
-          <h2 className=' mt-4 text-center  font-semibold text-3xl'>{list.title==="Daily" ?`${dailytitle(list.day)}`:list.title}</h2>
+          <h2 className=' mt-4 text-center  font-semibold sm:text-3xl text-2xl'>{list.title==="Daily" ?`${dailytitle(list.day)}`:list.title}</h2>
           {list.title==="Daily" && <p className='text-center font-medium text-sm font-edu mt-1'>Auto Reset's Daily</p>}
         </div>
         <div className="p-b-container py-4 px-8">
-          <h3 className='font-semibold text-2xl  '>You're {percent}% done!</h3>
+          <h3 className='font-semibold text-xl sm:text-2xl '>You're {percent}% done!</h3>
           <div className="progressbar w-full h-4 bg-neutral-300 dark:bg-neutral-700 rounded-full mt-3">
             <div className={`progress h-full bg-light-primary dark:bg-dark-primary rounded-full`} style={{ width: `${percent}%` }}></div>
           </div>

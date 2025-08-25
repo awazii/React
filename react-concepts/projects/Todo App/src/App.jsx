@@ -21,8 +21,9 @@ function App() {
   useEffect(() => {
     const today = dayjs().format('DD-MM-YYYY')
     const prev= todolists.daily[0].date
+     console.log(todolists)
     if (today !== prev) {
-      settodolists(produce((todolists,drafts)=>{
+      settodolists(produce(todolists,drafts=>{
         drafts.daily[0].date = today
         drafts.daily[0].day = dayjs().format('d')
         drafts.daily[0].tasks = []
