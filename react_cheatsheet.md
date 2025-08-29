@@ -189,6 +189,7 @@ import styles from "./App.module.css"
 - Error Boundaries.
 - Suspense + Streaming for data fetching.
 - Optimizing bundle size.
+- forward ref.
 
 ---
 

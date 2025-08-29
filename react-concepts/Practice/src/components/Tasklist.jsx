@@ -1,14 +1,11 @@
-import { useMemo, useState } from 'react';
-
+import { useMemo, useState ,useContext} from 'react';
 const tasks = [
   { id: 1, title: 'Design UI', status: 'completed' },
   { id: 2, title: 'Fix sidebar bug', status: 'pending' },
   { id: 3, title: 'Refactor theme logic', status: 'completed' },
 ];
-
 export default function TaskList() {
   const [filter, setFilter] = useState('all');
-
   const filteredTasks = useMemo(() => {
     console.log('Filtering tasks...');
     return filter === 'all'
@@ -31,7 +28,6 @@ export default function TaskList() {
           </button>
         ))}
       </div>
-
       <ul className="space-y-2">
         {filteredTasks.map(task => (
           <li key={task.id} className="border p-2 rounded">

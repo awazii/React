@@ -1,9 +1,11 @@
 import {useState,useRef,useEffect} from 'react'
 import '../styles/cards.css'
 import styles from "../styles/practice.module.css"
+import { useNavigate  } from 'react-router-dom'
 const Cards = (props) => {
 const [islike, setlike] = useState(0)
 const inputref = useRef()
+const navigation =  useNavigate();
 useEffect(() => {
       console.log(`${islike?"you like this card":"you dislike this card"}`)
 }, [islike])
@@ -19,8 +21,11 @@ useEffect(() => {
      function lenghtchecker () {
       alert( inputref.current.value.length)
      }
+     function navto() {
+          navigation(`/cards/${props.id}`);
+     }
   return (
-    <div data-testid={`card-${props.id}`} className="card">
+    <div data-testid={`card-${props.id}`} className="card" onClick={navto}>
       <div className="Image-container">
         <img src={props.img} alt={props.title} />
       </div>

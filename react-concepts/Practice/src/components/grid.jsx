@@ -1,25 +1,34 @@
 import { cards } from '../data/cards'
 import Cards from './cards.jsx'
-import Renderapi from './renderapi.jsx'
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useContext } from 'react'
+import { auth } from '../App'
 import '../styles/grid.css'
-const Grid = (props) => {
-  //  useEffect(() => {
-  //    console.log("i am from grid component")
-  //  })
+const Grid = () => {
   const [data, setdata] = useState([])
-  useEffect(() => {
-   ( async () => {
-      let dommy = await fetch("https://jsonplaceholder.typicode.com/posts")
-      let data = await dommy.json()
-      setdata(data)
-    })()
-  }, [])
-
+   const [index, setIndex] = useState(0);
+    const {setinfo,info }= useContext(auth);    
+   const changeinfo = () => {
+        const strings = [
+          "Told you !!",
+          "You clicked again!",
+          "Keep going 💪",
+          "Last one?",
+          "Nevermind, click more 😆",
+          "I can change that"
+        ];
+        console.log(index)
+        const currentString = strings[index];
+        setinfo(currentString)
+        const nextIndex = (index + 1) % strings.length;
+        setIndex(nextIndex)
+      }
   return (
     <>
+       <div className="container">
+        <button onClick={changeinfo} className='Change'>Change Info</button>
+      </div>
       <div className="grid-container">
-        {!props.api ? cards.map(card => {
+       {cards.map(card => {
           return (
             <Cards
               id={card.id}
@@ -27,18 +36,9 @@ const Grid = (props) => {
               title={card.title}
               artist={card.artist}
               img={card.img}
-              change={props.info}
+              change={info}
             />
           )
-        }) : data.map(card=>{
-             return(
-              <Renderapi
-              id={card.id}
-              key={card.id}
-              title={card.title}
-              body={card.body}
-              />
-             )
         })}
       </div>
     </>

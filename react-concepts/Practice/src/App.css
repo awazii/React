@@ -1,9 +1,10 @@
 .Two{
     display: grid;
+    height: 80vh;
     grid-template-columns: 700px 600px;
     justify-content: center;
-    gap: 30px
-    ;
+    align-items: center;
+    gap: 30px;
     & h2{
         margin-bottom: 10px;
     }
@@ -36,4 +37,10 @@
     border: 1px solid;
     padding:5px 20px;
     border-radius: inherit;
+}
+.active{
+    background-color: rgb(39, 37, 37);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 12px;
 }

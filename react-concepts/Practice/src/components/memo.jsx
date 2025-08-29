@@ -1,9 +1,9 @@
-import React from 'react'
+import React  from 'react'
 import Callback from './callback.jsx'
-import { useMemo,useState ,useEffect , useCallback} from 'react';
+import { useMemo,useState ,useEffect , useCallback ,useContext} from 'react';
 const Memo = () => {
     const [value, setvalue] = useState(0)
-    const [larger, setlarger] = useState(arr)
+    const [larger, setlarger] = useState([])
     const [searchvalue, setsearchvalue] = useState("")
     const [count, setcount] = useState(0)
   const factorial = useMemo(() => {
@@ -12,8 +12,8 @@ const Memo = () => {
 }, [value]);
  const filtered = useMemo(()=>{
         return larger.filter(item=>item.toString().includes(searchvalue))
- },[searchvalue,larger])
- function arr(value=10000) {
+ },[larger,searchvalue])
+ function arr(value) {
     return Array(value).fill().map((_,i)=>` item ${i} `)
  }
  useEffect(() => {
@@ -34,7 +34,8 @@ const Memo = () => {
       }}  className='border ' />
           <button onClick={()=>{ setcount(count+1)
       }} className='border py-1 px-4 rounded-md mx-4'>{count}</button>
-      <input type="text" value={searchvalue} onChange={(e)=>{setsearchvalue(e.target.value)}} className='border ' />
+      <input type="text" value={searchvalue} onChange={(e)=>{setsearchvalue(e.target.value)
+      }} className='border ' />
      <p className="text-sm w-full h-full  border">
   Array length: {larger.length} {`Search value is ${filtered}`}
 </p>

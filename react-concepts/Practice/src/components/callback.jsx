@@ -1,11 +1,12 @@
-import React from 'react'
-import { memo,useState,useRef,forwardRef,useCallback,useMemo } from 'react'
+import React, { use } from 'react'
+import { memo,useRef,forwardRef,useContext} from 'react'
  const  Outer=forwardRef((props,ref)=>{
      return <input className='border'  ref={ref} />
  })
 const Callback = ({randomfruit}) => {
   const userInputRef = useRef();
   console.log("component re-rendered")
+
   return (
     <div>
          <Outer ref={userInputRef} />
