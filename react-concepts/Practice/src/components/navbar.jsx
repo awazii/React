@@ -15,7 +15,8 @@ function multirefhander(el,i) {
           <li ref={(el)=>multirefhander(el,1)}>About</li>
           <li ref={(el)=>multirefhander(el,2)}>Contact</li> */}
           <li><NavLink className={(e)=>{return e.isActive ? "active":""}} to="/">Home</NavLink></li>
-          <li><NavLink className={(e)=>{return e.isActive ? "active":""}} to="/login">Login</NavLink></li>
+          <li><NavLink className={(e)=>{return e.isActive ? "active":""}} to="/login">Login in </NavLink></li>
+          <li><NavLink className={(e)=>{return e.isActive ? "active":""}} to="/form">Sign up</NavLink></li>
           <li><NavLink className={(e)=>{return e.isActive ? "active":""}} to="/container">Container</NavLink></li>
           <li><NavLink className={(e)=>{return e.isActive ? "active":""}} to="/memo">Memo</NavLink></li>
           <li><NavLink className={(e)=>{return e.isActive ? "active":""}} to="/focustracker">Focustracker</NavLink></li>

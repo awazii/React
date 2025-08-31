@@ -12,6 +12,7 @@ import Container from './components/Container.jsx'
 import Login from './components/Login.jsx'
 import Card from './components/card.jsx'
 import Renderapi from './components/renderapi.jsx'
+import Form from './components/Form.jsx'
 export const auth = createContext();
 const fetchdata = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -27,6 +28,10 @@ function App() {
           path: "/",
           element: <Grid />,
           errorElement: <div>Error loading grid</div>
+        },
+        {
+          path: "/form",
+          element: <Form />
         },
         {
           path: "/cards/:id",

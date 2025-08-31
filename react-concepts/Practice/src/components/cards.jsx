@@ -25,8 +25,8 @@ useEffect(() => {
           navigation(`/cards/${props.id}`);
      }
   return (
-    <div data-testid={`card-${props.id}`} className="card" onClick={navto}>
-      <div className="Image-container">
+    <div data-testid={`card-${props.id}`} className="card" >
+      <div className="Image-container "onClick={navto}>
         <img src={props.img} alt={props.title} />
       </div>
       <h3 className="title">{props.title}</h3>
