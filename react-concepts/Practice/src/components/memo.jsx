@@ -6,6 +6,7 @@ const Memo = () => {
     const [larger, setlarger] = useState([])
     const [searchvalue, setsearchvalue] = useState("")
     const [count, setcount] = useState(0)
+    const [val1, setval1] = useState(0)
   const factorial = useMemo(() => {
   const compute = (n) => (n === 0 ? 1 : n * compute(n - 1));
   return compute(value);
@@ -27,7 +28,7 @@ const Memo = () => {
   },[])
   return (
     <div>
-      <Callback  randomfruit={randomfruit} />
+      <Callback  randomfruit={randomfruit} factorial={factorial} val1={val1} setval1={setval1} />
       <p>Factorial of {value} is: {factorial}</p>
       <input type="number" value={value} onChange={(e)=>{
        setvalue(Math.max(0,e.target.value))

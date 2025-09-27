@@ -19,11 +19,14 @@ function agecheck(age) {
 const arr = [1, 2, 3, 4];
 const [first, second, third, fourth] = arr; // destructuring the array into variables
 console.log(first, second, third, fourth);
-
+//array last value
+console.log(arr.at(-1));
+console.log(e);
 // Object Destructuring
 const obj = { name: "John", age: 30 };
 const { name, age } = obj; // destructuring the object into variables
-console.log(name, age);
+const { name:username, age:userage } = obj; // destructuring the object into variables
+console.log(username, userage);
 const obj2 = { name, age, city: "New York" }; // if keys and value are same we can use shorthand notation
 
 //Default Parameters, Spread Operator, and Rest Parameters

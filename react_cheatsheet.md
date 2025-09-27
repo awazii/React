@@ -190,6 +190,7 @@ import styles from "./App.module.css"
 - Suspense + Streaming for data fetching.
 - Optimizing bundle size.
 - forward ref.
+- Use reducer.
 
 ---
 

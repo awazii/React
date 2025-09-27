@@ -13,6 +13,7 @@ import Login from './components/Login.jsx'
 import Card from './components/card.jsx'
 import Renderapi from './components/renderapi.jsx'
 import Form from './components/Form.jsx'
+import Reducer from './components/Reducer.jsx'
 export const auth = createContext();
 const fetchdata = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -68,7 +69,10 @@ function App() {
         },
         {
           path: "/login",
-          element: <Login />
+          element: <>
+           <Login/>
+           <Reducer/>
+           </>,
         }
       ],
     },
