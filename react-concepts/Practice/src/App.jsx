@@ -14,6 +14,8 @@ import Card from './components/card.jsx'
 import Renderapi from './components/renderapi.jsx'
 import Form from './components/Form.jsx'
 import Reducer from './components/Reducer.jsx'
+import Custom from './components/Custom.jsx'
+import Todo from './components/todo.jsx'
 export const auth = createContext();
 const fetchdata = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -40,7 +42,7 @@ function App() {
         },
         {
           path: "/container",
-          element: <Container />,
+          element: <><Container /> <Custom /></>,
         },
         {
           path: "/memo",
@@ -72,6 +74,7 @@ function App() {
           element: <>
            <Login/>
            <Reducer/>
+            <Todo/>
            </>,
         }
       ],

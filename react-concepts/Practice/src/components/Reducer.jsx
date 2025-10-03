@@ -17,7 +17,6 @@ const Quiz = () => {
         const isCorrect = action.answer === action.userAnswer;
         const nextIndex = state.index + 1;
         return {
-          ...state,
           score: isCorrect ? state.score + 1 : state.score,
           index: nextIndex,
           finished: nextIndex === questions.length,
